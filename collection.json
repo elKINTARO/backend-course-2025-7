@@ -2,9 +2,17 @@
   "info": {
     "_postman_id": "backend-course-2025-6",
     "name": "Laba 6 Invent API",
-    "description": "Запити для тестування лабораторної роботи",
+    "description": "Запити для тестування",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string",
+      "description": "Базовий URL сервісу в Docker (host порт = APP_PORT)"
+    }
+  ],
   "item": [
     {
       "name": "HTML Forms",
@@ -14,13 +22,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "http://localhost:3000/RegisterForm.html",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["RegisterForm.html"]
-            },
+            "url": "{{baseUrl}}/RegisterForm.html",
             "description": "Отримати HTML форму для реєстрації пристрою"
           }
         },
@@ -29,13 +31,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "http://localhost:3000/SearchForm.html",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["SearchForm.html"]
-            },
+            "url": "{{baseUrl}}/SearchForm.html",
             "description": "Отримати HTML форму для пошуку пристрою"
           }
         }
@@ -72,13 +68,7 @@
                 }
               ]
             },
-            "url": {
-              "raw": "http://localhost:3000/register",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["register"]
-            },
+            "url": "{{baseUrl}}/register",
             "description": "Реєстрація нового пристрою з фото. Очікується статус 201."
           }
         },
@@ -102,13 +92,7 @@
                 }
               ]
             },
-            "url": {
-              "raw": "http://localhost:3000/register",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["register"]
-            },
+            "url": "{{baseUrl}}/register",
             "description": "Реєстрація пристрою без фото"
           }
         },
@@ -117,13 +101,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "http://localhost:3000/inventory",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["inventory"]
-            },
+            "url": "{{baseUrl}}/inventory",
             "description": "Отримати список всіх інвентаризованих речей. Очікується статус 200."
           }
         },
@@ -132,13 +110,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "http://localhost:3000/inventory/1",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["inventory", "1"]
-            },
+            "url": "{{baseUrl}}/inventory/1",
             "description": "Отримати інформацію про пристрій з ID=1. Очікується статус 200."
           }
         },
@@ -156,13 +128,7 @@
               "mode": "raw",
               "raw": "{\n  \"inventory_name\": \"Laptop Dell XPS 15 (Updated)\",\n  \"description\": \"Work laptop with 32GB RAM, 1TB SSD, and 4K display\"\n}"
             },
-            "url": {
-              "raw": "http://localhost:3000/inventory/1",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["inventory", "1"]
-            },
+            "url": "{{baseUrl}}/inventory/1",
             "description": "Оновити назву та опис пристрою. Очікується статус 200."
           }
         },
@@ -180,13 +146,7 @@
               "mode": "raw",
               "raw": "{\n  \"description\": \"Only description updated\"\n}"
             },
-            "url": {
-              "raw": "http://localhost:3000/inventory/1",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["inventory", "1"]
-            },
+            "url": "{{baseUrl}}/inventory/1",
             "description": "Оновити тільки опис, назва залишиться без змін"
           }
         },
@@ -195,13 +155,7 @@
           "request": {
             "method": "DELETE",
             "header": [],
-            "url": {
-              "raw": "http://localhost:3000/inventory/2",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["inventory", "2"]
-            },
+            "url": "{{baseUrl}}/inventory/2",
             "description": "Видалити пристрій з ID=2. Очікується статус 200."
           }
         }
@@ -215,13 +169,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "http://localhost:3000/inventory/1/photo",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["inventory", "1", "photo"]
-            },
+            "url": "{{baseUrl}}/inventory/1/photo",
             "description": "Отримати фото пристрою. Очікується image/jpeg з статусом 200."
           }
         },
@@ -241,13 +189,7 @@
                 }
               ]
             },
-            "url": {
-              "raw": "http://localhost:3000/inventory/1/photo",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["inventory", "1", "photo"]
-            },
+            "url": "{{baseUrl}}/inventory/1/photo",
             "description": "Оновити фото пристрою. Очікується статус 200."
           }
         }
@@ -278,13 +220,7 @@
                 }
               ]
             },
-            "url": {
-              "raw": "http://localhost:3000/search",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["search"]
-            },
+            "url": "{{baseUrl}}/search",
             "description": "Пошук пристрою з додаванням посилання на фото в опис"
           }
         },
@@ -303,13 +239,7 @@
                 }
               ]
             },
-            "url": {
-              "raw": "http://localhost:3000/search",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["search"]
-            },
+            "url": "{{baseUrl}}/search",
             "description": "Пошук пристрою без посилання на фото"
           }
         }
@@ -333,13 +263,7 @@
                 }
               ]
             },
-            "url": {
-              "raw": "http://localhost:3000/register",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["register"]
-            },
+            "url": "{{baseUrl}}/register",
             "description": "Спроба реєстрації без обов'язкового поля. Очікується статус 400."
           }
         },
@@ -348,13 +272,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "http://localhost:3000/inventory/999",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["inventory", "999"]
-            },
+            "url": "{{baseUrl}}/inventory/999",
             "description": "Спроба отримати неіснуючий пристрій. Очікується статус 404."
           }
         },
@@ -363,13 +281,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": {
-              "raw": "http://localhost:3000/inventory/999/photo",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["inventory", "999", "photo"]
-            },
+            "url": "{{baseUrl}}/inventory/999/photo",
             "description": "Спроба отримати фото неіснуючого пристрою. Очікується статус 404."
           }
         },
@@ -387,13 +299,7 @@
               "mode": "raw",
               "raw": "{\n  \"inventory_name\": \"Test\"\n}"
             },
-            "url": {
-              "raw": "http://localhost:3000/inventory/999",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["inventory", "999"]
-            },
+            "url": "{{baseUrl}}/inventory/999",
             "description": "Спроба оновити неіснуючий пристрій. Очікується статус 404."
           }
         },
@@ -402,13 +308,7 @@
           "request": {
             "method": "DELETE",
             "header": [],
-            "url": {
-              "raw": "http://localhost:3000/inventory/999",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["inventory", "999"]
-            },
+            "url": "{{baseUrl}}/inventory/999",
             "description": "Спроба видалити неіснуючий пристрій. Очікується статус 404."
           }
         },
@@ -427,13 +327,7 @@
                 }
               ]
             },
-            "url": {
-              "raw": "http://localhost:3000/search",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["search"]
-            },
+            "url": "{{baseUrl}}/search",
             "description": "Пошук неіснуючого пристрою. Очікується статус 404."
           }
         }

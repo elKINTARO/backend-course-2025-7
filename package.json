@@ -1,28 +1,35 @@
 {
-  "name": "laba-6",
+  "name": "laba-7",
   "version": "1.0.0",
-  "description": "",
+  "description": "Inventory management system with Docker and PostgreSQL",
   "main": "main.js",
   "scripts": {
+    "start": "node main.js -H 0.0.0.0 -p 3000 -c ./cache",
+    "dev": "nodemon main.js -H 0.0.0.0 -p 3000 -c ./cache",
+    "dev:inspect": "nodemon --inspect main.js -H 0.0.0.0 -p 3000 -c ./cache",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f",
+    "docker:restart": "docker compose restart app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elKINTARO/backend-course-2025-6.git"
+    "url": "git+https://github.com/elKINTARO/backend-course-2025-7.git"
   },
   "author": "Fedotov Kiril FEI-23",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/elKINTARO/backend-course-2025-6/issues"
-  },
-  "homepage": "https://github.com/elKINTARO/backend-course-2025-6#readme",
   "dependencies": {
     "commander": "^14.0.2",
+    "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "multer": "^2.0.2",
-    "nodemon": "^3.1.11",
+    "pg": "^8.13.1",
     "superagent": "^10.2.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
